@@ -49,8 +49,17 @@
 		linux,cma {
 			compatible = "shared-dma-pool";
 			reusable;
-			reg = <0x00000000 0x58000000 0x0 0x18000000>;
+			reg = <0x00000000 0x58000000 0x0 0x17F00000>;
 			linux,cma-default;
+		};
+
+		/* buffer recording the debug logs in panic/oops events */
+		ramoops {
+			compatible = "ramoops";
+			reg = <0x0 0x6FF00000 0x0 0x00100000>;
+			record-size	= <0x00020000>;
+			console-size	= <0x00020000>;
+			ftrace-size	= <0x00020000>;
 		};
 
 		/* device specific region for contiguous allocations */
