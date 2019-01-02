@@ -57,6 +57,18 @@
 			reusable;
 			reg = <0x00000000 0x68000000 0x0 0x04000000>;
 		};
+
+		/* Jailhouse hypervior */
+		jailhouse: jailhouse@6c000000 {
+			reg = <0x00000000 0x6c000000 0x0 0x00400000>;
+			no-map;
+		};
+
+		/* Jailhouse inmate GIC demo */
+		jh_inmate: jh_mate@6c400000 {
+			reg = <0x00000000 0x6c400000 0x0 0x00400000>;
+			no-map;
+		};
 	};
 
 	audio_clkout: audio-clkout {
